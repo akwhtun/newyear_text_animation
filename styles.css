@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Rubik+Gemstones&family=Rubik+Puddles&family=Rubik+Vinyl&display=swap');
+
+*, *::after, *::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+ div{
+    height:100vh;
+    background: linear-gradient(145deg, #bcd3c7, #6c86a0);
+    color:#1e1f1f;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    column-gap: 2em;
+    font-family: 'Rubik Dirt', cursive;
+    }
+
+    span{
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        position:relative; 
+    }
+
+    .newyear > span{
+        text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+        0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+        0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+        animation: spanShadow 4s 4s infinite alternate;
+    }
+    span::after{
+        content: attr(data-text);
+        color:#fcfafa;
+        position:absolute;
+        left:0; 
+        width:0%;
+        overflow: hidden;
+        animation: textanimation 2.5s ease-in 2s infinite;
+    }
+
+    .newtext{
+        opacity: 0;
+    }
+
+    #happy .newtext.animation{
+        opacity: 1;
+        color:#1e1f1f;
+        display: inline-block;
+        transition: transform 1s ease-in-out;
+        transform: translateX(-50px) rotate(360deg);
+        animation: happytextAnimation 2s forwards;
+    }
+
+
+    #new .newtext.animation{
+        opacity: 1;
+        color:#ff1e96;
+        display: inline-block;
+        transition: transform 1s ease-in-out;
+        transform: translate(20px ,-15px);
+        animation: newtextAnimation 2s forwards;
+    }
+
+    #year .newtext.animation{
+        opacity: 1;
+        color:#1e90ff;
+        display: inline-block;
+        transition: transform 1s ease-in-out;
+        transform: translateX(400px);
+        animation: yeartextAnimation 2s forwards;
+    }
+
+    @keyframes spanShadow {
+        0%{
+            text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+            0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+            0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+        }
+        50%{
+            text-shadow: -0.05em 0em 0em rgba(255, 0, 0, 0.75),
+            0.025em 0.05em 0em rgba(0, 255, 0, 0.75),
+            0.05em -0.025em 0em rgba(0, 0, 255, 0.75);
+        
+        }
+        100%{
+            text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+                        -0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+                        0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+        }
+        
+    }
+
+    @keyframes happytextAnimation{
+        from{
+            transform: translateX(-50px) rotate(360deg);
+        }
+        to{
+            transform: translateX(0px);
+        }
+    } 
+
+    @keyframes newtextAnimation {
+    from{
+            transform: translate(20px , -15px);
+    }
+    to{
+            transform: translate(0);
+    }
+    }
+
+    @keyframes yeartextAnimation {
+    from{
+            transform: translateX(400px);
+    }
+    to{
+            transform: translateX(0px);
+    }
+    }
+
+
+    @keyframes textanimation {
+        from{
+            width:0%;
+        }
+        to{
+            width:100%;
+        }
+    }
+
+
+    .date{
+        margin: 0 50px;
+        background: none;
+        color:#1e1f1f;
+    }
+
+    .date span{
+        opacity: 0;
+        font-weight: bolder;
+    }
+
+    .twenty{
+        font-family: 'Rubik Gemstones', cursive;
+        animation: twentytext 1ms 5s forwards;
+    }
+
+    .twenty.twyAnimation{
+        text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+        0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+        0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+        animation: twentyAnimation 1.8s 4.1s infinite alternate;
+    }
+
+    #two{
+        transform: translateY(-300px);
+        font-family: 'Rubik Puddles', cursive;
+        animation: two 2s 6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    }
+
+    #three{
+        transform: translateY(-300px);
+        font-family: 'Rubik Vinyl', cursive;
+        animation: three 2s 6.3s cubic-bezier(0.39, 0.575, 0.565, 1) forwards;
+    }
+
+    @keyframes twentytext {
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;
+        }
+    }
+
+    @keyframes two {
+        from{
+            transform: translateY(-300px);
+            opacity: 1;
+        }
+        to{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+    @keyframes three{
+        0%{
+            transform: translateY(-300px);
+            opacity: 1;
+        }
+        80%{
+            transform: translateY(-100px);
+            opacity: 1;
+        }
+        100%{
+            transform: translateY(0px);
+            opacity: 1;
+        }
+    }
+
+    @keyframes twentyAnimation {
+        0%{
+            opacity: 1;
+            text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+            0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+            0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+            color:#fcfafa;
+            transform: rotate(5deg);
+        }
+        50%{
+            opacity: 1;
+            text-shadow: -0.05em 0em 0em rgba(255, 0, 0, 0.75),
+            0.025em 0.05em 0em rgba(0, 255, 0, 0.75),
+            0.05em -0.025em 0em rgba(0, 0, 255, 0.75);
+        
+        }
+        100%{
+            opacity: 1;
+            text-shadow: 0.05em 0em 0em rgba(255, 0, 0, 0.75),
+                        -0.025em -0.05em 0em rgba(0, 255, 0, 0.75),
+                        0.05em 0.025em 0em rgba(0, 0, 255, 0.75);
+            color:#1e1f1f;
+            transform: rotate(-5deg);
+        }
+        
+    }
